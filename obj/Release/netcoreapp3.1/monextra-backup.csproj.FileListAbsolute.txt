@@ -1,0 +1,15 @@
+E:\Users\Connor McHugh\Documents\GitHub\monextra-backup\bin\Release\netcoreapp3.1\monextra-backup.exe
+E:\Users\Connor McHugh\Documents\GitHub\monextra-backup\bin\Release\netcoreapp3.1\monextra-backup.deps.json
+E:\Users\Connor McHugh\Documents\GitHub\monextra-backup\bin\Release\netcoreapp3.1\monextra-backup.runtimeconfig.json
+E:\Users\Connor McHugh\Documents\GitHub\monextra-backup\bin\Release\netcoreapp3.1\monextra-backup.runtimeconfig.dev.json
+E:\Users\Connor McHugh\Documents\GitHub\monextra-backup\bin\Release\netcoreapp3.1\monextra-backup.dll
+E:\Users\Connor McHugh\Documents\GitHub\monextra-backup\bin\Release\netcoreapp3.1\monextra-backup.pdb
+E:\Users\Connor McHugh\Documents\GitHub\monextra-backup\obj\Release\netcoreapp3.1\monextra_backup.MainWindow.resources
+E:\Users\Connor McHugh\Documents\GitHub\monextra-backup\obj\Release\netcoreapp3.1\monextra_backup.Options.resources
+E:\Users\Connor McHugh\Documents\GitHub\monextra-backup\obj\Release\netcoreapp3.1\monextra-backup.csproj.GenerateResource.cache
+E:\Users\Connor McHugh\Documents\GitHub\monextra-backup\obj\Release\netcoreapp3.1\monextra-backup.AssemblyInfoInputs.cache
+E:\Users\Connor McHugh\Documents\GitHub\monextra-backup\obj\Release\netcoreapp3.1\monextra-backup.AssemblyInfo.cs
+E:\Users\Connor McHugh\Documents\GitHub\monextra-backup\obj\Release\netcoreapp3.1\monextra-backup.csproj.CoreCompileInputs.cache
+E:\Users\Connor McHugh\Documents\GitHub\monextra-backup\obj\Release\netcoreapp3.1\monextra-backup.dll
+E:\Users\Connor McHugh\Documents\GitHub\monextra-backup\obj\Release\netcoreapp3.1\monextra-backup.pdb
+E:\Users\Connor McHugh\Documents\GitHub\monextra-backup\obj\Release\netcoreapp3.1\monextra-backup.genruntimeconfig.cache

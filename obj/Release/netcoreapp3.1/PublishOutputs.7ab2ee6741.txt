@@ -1,0 +1,5 @@
+E:\Users\Connor McHugh\Documents\GitHub\monextra-backup\bin\Release\netcoreapp3.1\publish\monextra-backup.exe
+E:\Users\Connor McHugh\Documents\GitHub\monextra-backup\bin\Release\netcoreapp3.1\publish\monextra-backup.dll
+E:\Users\Connor McHugh\Documents\GitHub\monextra-backup\bin\Release\netcoreapp3.1\publish\monextra-backup.deps.json
+E:\Users\Connor McHugh\Documents\GitHub\monextra-backup\bin\Release\netcoreapp3.1\publish\monextra-backup.runtimeconfig.json
+E:\Users\Connor McHugh\Documents\GitHub\monextra-backup\bin\Release\netcoreapp3.1\publish\monextra-backup.pdb

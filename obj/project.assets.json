@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Users\\Connor McHugh\\Documents\\GitHub\\monextra-backup\\monextra-backup\\monextra-backup.csproj",
+      "projectUniqueName": "E:\\Users\\Connor McHugh\\Documents\\GitHub\\monextra-backup\\monextra-backup.csproj",
       "projectName": "monextra-backup",
-      "projectPath": "E:\\Users\\Connor McHugh\\Documents\\GitHub\\monextra-backup\\monextra-backup\\monextra-backup.csproj",
+      "projectPath": "E:\\Users\\Connor McHugh\\Documents\\GitHub\\monextra-backup\\monextra-backup.csproj",
       "packagesPath": "C:\\Users\\Connor McHugh\\.nuget\\packages\\",
-      "outputPath": "E:\\Users\\Connor McHugh\\Documents\\GitHub\\monextra-backup\\monextra-backup\\obj\\",
+      "outputPath": "E:\\Users\\Connor McHugh\\Documents\\GitHub\\monextra-backup\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Connor McHugh\\AppData\\Roaming\\NuGet\\NuGet.Config",
