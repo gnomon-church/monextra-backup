@@ -20,19 +20,16 @@ namespace monextra_backup
 
         public void RefreshLabel()
         {
-            //MessageBox.Show(ConfigurationManager.AppSettings["BackupDrive"]);
-            // driveLetterLabel.Text = ConfigurationManager.AppSettings["BackupDrive"];
-            descriptionLabel.Text = "test";
-            driveLetterLabel.Text = "test";
-            driveLetterLabel.Refresh();
-            descriptionLabel.Refresh();
+            selectedDbLabel.Text = ConfigurationManager.AppSettings["DatabaseDrive"];
+            selectedBuLabel.Text = ConfigurationManager.AppSettings["BackupDrive"];
+            selectedDbLabel.Refresh();
+            selectedBuLabel.Refresh();
 
         }
 
         public void MainWindow_Load(object sender, EventArgs e)
         {
-            driveLetterLabel.Text = ConfigurationManager.AppSettings["BackupDrive"];
-            // RefreshLabel();
+            RefreshLabel();
         }
 
         private void backupButton_Click(object sender, EventArgs e)
@@ -44,16 +41,6 @@ namespace monextra_backup
         {
             Options slctDrv = new Options();
             slctDrv.Show();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void progressBar1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

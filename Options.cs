@@ -19,11 +19,6 @@ namespace monextra_backup
 
         private void Options_Load(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-            
-            
-=======
->>>>>>> main
             DriveInfo[] ListAllDrives = DriveInfo.GetDrives();
 
             int counterA = 0;
@@ -48,10 +43,10 @@ namespace monextra_backup
             {
                 if (Drive.DriveType == DriveType.Removable)
                 {
-                    TreeNode newNode = new TreeNode(Drive.Name + " " + Drive.VolumeLabel + " (" + Drive.DriveType + ")");
+                    TreeNode newNode = new TreeNode(Drive.Name + " - " + Drive.VolumeLabel + " (" + Drive.DriveType + ")");
                     buDrivesList.Nodes.Add(newNode);
 
-                    if (Drive.Name + " " + Drive.VolumeLabel + " (" + Drive.DriveType + ")" == ConfigurationManager.AppSettings["BackupDrive"])
+                    if (Drive.Name + " - " + Drive.VolumeLabel + " (" + Drive.DriveType + ")" == ConfigurationManager.AppSettings["BackupDrive"])
                     {
                         buDrivesList.SelectedNode = buDrivesList.Nodes[counterB];
                     }
@@ -86,19 +81,5 @@ namespace monextra_backup
             mw.RefreshLabel();
             this.Close();
         }
-<<<<<<< HEAD
-=======
-
-        CheckBox lastChecked;
-        private void buDrivesList_AfterCheck(object sender, TreeViewEventArgs e)
-        {
-            CheckBox activeCheckBox = sender as CheckBox;
-            //if (activeCheckBox != lastChecked && lastChecked != null)
-            //{
-            //    lastChecked.Checked = false;
-            //}
-            lastChecked = activeCheckBox.Checked ? activeCheckBox : null;
-        }
->>>>>>> main
     }
 }

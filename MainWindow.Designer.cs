@@ -32,22 +32,23 @@ namespace monextra_backup
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.backupButton = new System.Windows.Forms.Button();
             this.selectDriveButton = new System.Windows.Forms.Button();
-            this.descriptionLabel = new System.Windows.Forms.Label();
-            this.driveLetterLabel = new System.Windows.Forms.Label();
+            this.buLabel = new System.Windows.Forms.Label();
+            this.selectedBuLabel = new System.Windows.Forms.Label();
+            this.selectedDbLabel = new System.Windows.Forms.Label();
+            this.dbLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(13, 127);
+            this.progressBar1.Location = new System.Drawing.Point(13, 130);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(376, 23);
             this.progressBar1.TabIndex = 1;
-            this.progressBar1.Click += new System.EventHandler(this.progressBar1_Click);
             // 
             // backupButton
             // 
             this.backupButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.backupButton.Location = new System.Drawing.Point(206, 45);
+            this.backupButton.Location = new System.Drawing.Point(206, 52);
             this.backupButton.Name = "backupButton";
             this.backupButton.Size = new System.Drawing.Size(105, 65);
             this.backupButton.TabIndex = 2;
@@ -57,7 +58,7 @@ namespace monextra_backup
             // 
             // selectDriveButton
             // 
-            this.selectDriveButton.Location = new System.Drawing.Point(92, 45);
+            this.selectDriveButton.Location = new System.Drawing.Point(92, 52);
             this.selectDriveButton.Name = "selectDriveButton";
             this.selectDriveButton.Size = new System.Drawing.Size(105, 65);
             this.selectDriveButton.TabIndex = 3;
@@ -65,34 +66,59 @@ namespace monextra_backup
             this.selectDriveButton.UseVisualStyleBackColor = true;
             this.selectDriveButton.Click += new System.EventHandler(this.selectDriveButton_Click);
             // 
-            // descriptionLabel
+            // buLabel
             // 
-            this.descriptionLabel.AutoSize = true;
-            this.descriptionLabel.ForeColor = System.Drawing.Color.Red;
-            this.descriptionLabel.Location = new System.Drawing.Point(13, 13);
-            this.descriptionLabel.Name = "descriptionLabel";
-            this.descriptionLabel.Size = new System.Drawing.Size(136, 15);
-            this.descriptionLabel.TabIndex = 4;
-            this.descriptionLabel.Text = "Currently Selected Drive:";
+            this.buLabel.AutoSize = true;
+            this.buLabel.ForeColor = System.Drawing.Color.Red;
+            this.buLabel.Location = new System.Drawing.Point(41, 24);
+            this.buLabel.Name = "buLabel";
+            this.buLabel.Size = new System.Drawing.Size(79, 15);
+            this.buLabel.TabIndex = 4;
+            this.buLabel.Text = "Backup Drive:";
             // 
-            // driveLetterLabel
+            // selectedBuLabel
             // 
-            this.driveLetterLabel.AutoSize = true;
-            this.driveLetterLabel.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.driveLetterLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.driveLetterLabel.ForeColor = System.Drawing.Color.Red;
-            this.driveLetterLabel.Location = new System.Drawing.Point(148, 13);
-            this.driveLetterLabel.Name = "driveLetterLabel";
-            this.driveLetterLabel.Size = new System.Drawing.Size(0, 15);
-            this.driveLetterLabel.TabIndex = 5;
+            this.selectedBuLabel.AutoSize = true;
+            this.selectedBuLabel.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.selectedBuLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.selectedBuLabel.ForeColor = System.Drawing.Color.Red;
+            this.selectedBuLabel.Location = new System.Drawing.Point(120, 25);
+            this.selectedBuLabel.Name = "selectedBuLabel";
+            this.selectedBuLabel.Size = new System.Drawing.Size(14, 15);
+            this.selectedBuLabel.TabIndex = 5;
+            this.selectedBuLabel.Text = "C";
+            // 
+            // selectedDbLabel
+            // 
+            this.selectedDbLabel.AutoSize = true;
+            this.selectedDbLabel.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.selectedDbLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.selectedDbLabel.ForeColor = System.Drawing.Color.Red;
+            this.selectedDbLabel.Location = new System.Drawing.Point(120, 9);
+            this.selectedDbLabel.Name = "selectedDbLabel";
+            this.selectedDbLabel.Size = new System.Drawing.Size(14, 15);
+            this.selectedDbLabel.TabIndex = 7;
+            this.selectedDbLabel.Text = "C";
+            // 
+            // dbLabel
+            // 
+            this.dbLabel.AutoSize = true;
+            this.dbLabel.ForeColor = System.Drawing.Color.Red;
+            this.dbLabel.Location = new System.Drawing.Point(13, 9);
+            this.dbLabel.Name = "dbLabel";
+            this.dbLabel.Size = new System.Drawing.Size(107, 15);
+            this.dbLabel.TabIndex = 6;
+            this.dbLabel.Text = "Database Location:";
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(402, 163);
-            this.Controls.Add(this.driveLetterLabel);
-            this.Controls.Add(this.descriptionLabel);
+            this.Controls.Add(this.selectedDbLabel);
+            this.Controls.Add(this.dbLabel);
+            this.Controls.Add(this.selectedBuLabel);
+            this.Controls.Add(this.buLabel);
             this.Controls.Add(this.selectDriveButton);
             this.Controls.Add(this.backupButton);
             this.Controls.Add(this.progressBar1);
@@ -110,8 +136,10 @@ namespace monextra_backup
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Button backupButton;
         private System.Windows.Forms.Button selectDriveButton;
-        private System.Windows.Forms.Label descriptionLabel;
-        private System.Windows.Forms.Label driveLetterLabel;
+        private System.Windows.Forms.Label buLabel;
+        private System.Windows.Forms.Label selectedBuLabel;
+        private System.Windows.Forms.Label selectedDbLabel;
+        private System.Windows.Forms.Label dbLabel;
     }
 }
 

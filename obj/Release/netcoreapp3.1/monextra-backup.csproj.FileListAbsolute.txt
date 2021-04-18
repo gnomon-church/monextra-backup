@@ -13,3 +13,5 @@ E:\Users\Connor McHugh\Documents\GitHub\monextra-backup\obj\Release\netcoreapp3.
 E:\Users\Connor McHugh\Documents\GitHub\monextra-backup\obj\Release\netcoreapp3.1\monextra-backup.dll
 E:\Users\Connor McHugh\Documents\GitHub\monextra-backup\obj\Release\netcoreapp3.1\monextra-backup.pdb
 E:\Users\Connor McHugh\Documents\GitHub\monextra-backup\obj\Release\netcoreapp3.1\monextra-backup.genruntimeconfig.cache
+E:\Users\Connor McHugh\Documents\GitHub\monextra-backup\obj\Release\netcoreapp3.1\monextra-backup.csprojAssemblyReference.cache
+E:\Users\Connor McHugh\Documents\GitHub\monextra-backup\bin\Release\netcoreapp3.1\monextra-backup.dll.config

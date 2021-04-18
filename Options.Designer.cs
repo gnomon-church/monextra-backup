@@ -38,18 +38,11 @@ namespace monextra_backup
             // 
             // buDrivesList
             // 
-<<<<<<< HEAD
-=======
             this.buDrivesList.CheckBoxes = true;
->>>>>>> main
             this.buDrivesList.Location = new System.Drawing.Point(8, 234);
             this.buDrivesList.Name = "buDrivesList";
             this.buDrivesList.Size = new System.Drawing.Size(195, 190);
             this.buDrivesList.TabIndex = 2;
-<<<<<<< HEAD
-=======
-            this.buDrivesList.AfterCheck += new System.Windows.Forms.TreeViewEventHandler(this.buDrivesList_AfterCheck);
->>>>>>> main
             // 
             // okayButton
             // 
