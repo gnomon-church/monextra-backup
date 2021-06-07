@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Ionic.Zip;
 
 namespace monextra_backup
 {
@@ -20,9 +21,7 @@ namespace monextra_backup
 
         public void RefreshLabel()
         {
-            selectedDbLabel.Text = ConfigurationManager.AppSettings["DatabaseDrive"];
             selectedBuLabel.Text = ConfigurationManager.AppSettings["BackupDrive"];
-            selectedDbLabel.Refresh();
             selectedBuLabel.Refresh();
 
         }
@@ -34,13 +33,50 @@ namespace monextra_backup
 
         private void backupButton_Click(object sender, EventArgs e)
         {
-
+            compressionWorker.RunWorkerAsync();
         }
 
         private void selectDriveButton_Click(object sender, EventArgs e)
         {
             Options slctDrv = new Options();
-            slctDrv.Show();
+            slctDrv.ShowDialog(this);
+            RefreshLabel();
+        }
+
+        private void BackgroundProcessLogicMethod(BackgroundWorker bw)
+        {
+            string backupDriveLetter = ConfigurationManager.AppSettings["BackupDrive"].Split(' ')[0];
+            
+            using (ZipFile zip = new ZipFile(backupDriveLetter + "nldata.zip"))
+            {
+                zip.AddDirectory(ConfigurationManager.AppSettings["DatabaseLocation"]);
+                zip.Save();
+            }
+        }
+
+        private void compressionWorker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            BackgroundWorker helperBW = sender as BackgroundWorker;
+            BackgroundProcessLogicMethod(helperBW);
+        }
+
+        private void compressionWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            if (e.Cancelled)
+            {
+                MessageBox.Show("Cancelled");
+            } else if (e.Error != null)
+            {
+                MessageBox.Show("Error");
+            } else
+            {
+                MessageBox.Show("Computerlink backup completed successfully!");
+            }
+        }
+
+        private void compressionWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            backupProgress.Value = e.ProgressPercentage;
         }
     }
 }

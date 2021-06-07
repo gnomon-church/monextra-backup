@@ -19,26 +19,11 @@ namespace monextra_backup
 
         private void Options_Load(object sender, EventArgs e)
         {
+            browseButton.Text = ConfigurationManager.AppSettings["DatabaseLocation"];
+
             DriveInfo[] ListAllDrives = DriveInfo.GetDrives();
 
-            int counterA = 0;
-            foreach (DriveInfo Drive in ListAllDrives)
-            {
-                if (Drive.DriveType != DriveType.Removable)
-                {
-                    TreeNode newNode = new TreeNode(Drive.Name + "NLDATA " + " (" + Drive.DriveType + ")");
-                    dbDrivesList.Nodes.Add(newNode);
-
-                    if (Drive.Name + "NLDATA " + " (" + Drive.DriveType + ")" == ConfigurationManager.AppSettings["DatabaseDrive"])
-                    {
-                        dbDrivesList.SelectedNode = dbDrivesList.Nodes[counterA];
-                    }
-
-                    counterA++;
-                }
-            }
-
-            int counterB = 0;
+            int counter = 0;
             foreach (DriveInfo Drive in ListAllDrives)
             {
                 if (Drive.DriveType == DriveType.Removable)
@@ -48,38 +33,41 @@ namespace monextra_backup
 
                     if (Drive.Name + " - " + Drive.VolumeLabel + " (" + Drive.DriveType + ")" == ConfigurationManager.AppSettings["BackupDrive"])
                     {
-                        buDrivesList.SelectedNode = buDrivesList.Nodes[counterB];
+                        buDrivesList.SelectedNode = buDrivesList.Nodes[counter];
                     }
 
-                    counterB++;
+                    counter++;
                 }
-            }
-        }
-
-        static void ShowConfig()
-        {
-
-            // For read access you do not need to call OpenExeConfiguraton
-            foreach (string key in ConfigurationManager.AppSettings)
-            {
-                string value = ConfigurationManager.AppSettings[key];
-                MessageBox.Show("Key: " + key + ", Value: " + value);
             }
         }
 
         private void okayButton_Click(object sender, EventArgs e)
         {
             Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+            config.AppSettings.Settings.Remove("DatabaseLocation");
+            config.AppSettings.Settings.Add("DatabaseLocation", browseButton.Text);
             config.AppSettings.Settings.Remove("BackupDrive");
             config.AppSettings.Settings.Add("BackupDrive", buDrivesList.SelectedNode.Text);
-            config.AppSettings.Settings.Remove("DatabaseDrive");
-            config.AppSettings.Settings.Add("DatabaseDrive", dbDrivesList.SelectedNode.Text);
             config.Save(ConfigurationSaveMode.Modified);
             ConfigurationManager.RefreshSection("appSettings");
-            // ShowConfig();
-            MainWindow mw = new MainWindow();
-            mw.RefreshLabel();
             this.Close();
+        }
+
+        private void selectDatabase_HelpRequest(object sender, EventArgs e)
+        {
+
+        }
+
+        private void browseButton_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog folderDlg = new FolderBrowserDialog();
+            DialogResult result = folderDlg.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                browseButton.Text = folderDlg.SelectedPath;
+                browseButton.Refresh();
+            }
         }
     }
 }
