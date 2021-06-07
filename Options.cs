@@ -1,11 +1,6 @@
 ﻿using System;
 using System.IO;
 using System.Configuration;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace monextra_backup

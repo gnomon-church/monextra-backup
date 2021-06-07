@@ -87,13 +87,6 @@ namespace monextra_backup
             this.selectedBuLabel.TabIndex = 5;
             this.selectedBuLabel.Text = "C";
             // 
-            // compressionWorker
-            // 
-            this.compressionWorker.WorkerReportsProgress = true;
-            this.compressionWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.compressionWorker_DoWork);
-            this.compressionWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.compressionWorker_ProgressChanged);
-            this.compressionWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.compressionWorker_RunWorkerCompleted);
-            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);

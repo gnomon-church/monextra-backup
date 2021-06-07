@@ -7,7 +7,9 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Package Description</description>
     <dependencies>
-      <group targetFramework=".NETCoreApp3.1" />
+      <group targetFramework=".NETCoreApp3.1">
+        <dependency id="DotNetZip" version="1.15.0" exclude="Build,Analyzers" />
+      </group>
     </dependencies>
     <frameworkReferences>
       <group targetFramework=".NETCoreApp3.1">
